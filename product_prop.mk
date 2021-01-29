@@ -28,3 +28,7 @@ PRODUCT_PRODUCT_OVERRIDES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     debug.sf.latch_unsignaled=1
 
+# Disable ccodec
+PRODUCT_PRODUCT_PROPERTIES += \
+    debug.stagefright.ccodec=0
+
