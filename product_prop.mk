@@ -302,5 +302,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.log.tag.PhoneConfigurationSettings=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.CdmaMoSms=$(VENDOR_LOG_LEVEL) \
     persist.log.tag.CdmaMtSms=$(VENDOR_LOG_LEVEL) \
-    persist.log.tag.powerd=$(VENDOR_LOG_LEVEL)
-
+    persist.log.tag.powerd=$(VENDOR_LOG_LEVEL) \
+    persist.log.tag.GED=$(VENDOR_LOG_LEVEL) \
+    persist.log.tag.hwcomposer=$(VENDOR_LOG_LEVEL) \
+    persist.log.tag.netd=$(VENDOR_LOG_LEVEL)
