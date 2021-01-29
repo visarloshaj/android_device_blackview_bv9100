@@ -14,6 +14,8 @@
 # limitations under the License.
 #
 
+DEVICE_PATH := device/blackview/bv9100
+
 BUILD_BROKEN_DUP_RULES := true
 
 # Platform
@@ -89,6 +91,9 @@ TARGET_USES_HWC2 := true
 
 # Network Routing
 TARGET_IGNORES_FTP_PPTP_CONNTRACK_FAILURE := true
+
+# Releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 
 # VNDK
 BOARD_VNDK_VERSION := current
