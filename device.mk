@@ -40,6 +40,10 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_PACKAGES += \
     Snap
 
+# Init
+PRODUCT_PACKAGES += \
+    init.mt6765.rc
+
 # NFC
 PRODUCT_PACKAGES += \
     NfcNci \
