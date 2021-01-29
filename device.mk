@@ -16,6 +16,9 @@
 
 $(call inherit-product-if-exists, vendor/blackview/bv9100/bv9100-vendor.mk)
 
+# Properties
+-include $(LOCAL_PATH)/product_prop.mk
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
