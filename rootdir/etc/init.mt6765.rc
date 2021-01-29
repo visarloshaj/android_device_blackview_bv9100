@@ -1,0 +1,8 @@
+service aee_aedv /system/bin/true
+    oneshot
+    disabled
+
+service aee_aedv64 /system/bin/true
+    oneshot
+    disabled
+
