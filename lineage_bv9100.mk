@@ -24,7 +24,7 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
-PRODUCT_BRAND := blackview
+PRODUCT_BRAND := Blackview
 PRODUCT_DEVICE := bv9100
 PRODUCT_MANUFACTURER := Blackview
 PRODUCT_NAME := lineage_bv9100
