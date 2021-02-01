@@ -32,8 +32,12 @@ def AddImage(info, basename, dest):
 
 def OTA_InstallEnd(info):
   PatchVendor(info)
-  info.script.Print("Patching firmware images...")
+  info.script.Print("Patching vbmeta image...")
   AddImage(info, "vbmeta.img", "/dev/block/bootdevice/by-name/vbmeta")
+
+  info.script.Print("Flashing scp firmware...")
+  AddImage(info, "scp.img", "/dev/block/bootdevice/by-name/scp1")
+  AddImage(info, "scp.img", "/dev/block/bootdevice/by-name/scp2")
 
 def PatchVendor(info):
   info.script.Print("Patching vendor init scripts & libs...")
