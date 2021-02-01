@@ -44,6 +44,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     init.mt6765.rc
 
+# Keylayout
+PRODUCT_COPY_FILES += \
+      $(LOCAL_PATH)/keylayout/ACCDET.kl:system/usr/keylayout/ACCDET.kl \
+      $(LOCAL_PATH)/keylayout/mtk-kpd.kl:system/usr/keylayout/mtk-kpd.kl
+
 # NFC
 PRODUCT_PACKAGES += \
     NfcNci \
