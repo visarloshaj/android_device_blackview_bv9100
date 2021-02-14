@@ -56,6 +56,10 @@ PRODUCT_COPY_FILES += \
       $(LOCAL_PATH)/keylayout/ACCDET.kl:system/usr/keylayout/ACCDET.kl \
       $(LOCAL_PATH)/keylayout/mtk-kpd.kl:system/usr/keylayout/mtk-kpd.kl
 
+# VNDK
+PRODUCT_TARGET_VNDK_VERSION := 28
+PRODUCT_EXTRA_VNDK_VERSIONS := 28
+
 # NFC
 PRODUCT_PACKAGES += \
     NfcNci \
