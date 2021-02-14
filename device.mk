@@ -40,6 +40,13 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_PACKAGES += \
     Snap
 
+# HIDL
+PRODUCT_PACKAGES += \
+    libhidltransport \
+    libhidltransport.vendor \
+    libhwbinder \
+    libhwbinder.vendor 
+
 # Init
 PRODUCT_PACKAGES += \
     init.mt6765.rc
