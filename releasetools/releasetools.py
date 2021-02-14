@@ -16,28 +16,30 @@
 import common
 
 def FullOTA_InstallEnd(info):
-  OTA_InstallEnd(info)
+  input_zip = info.input_zip
+  OTA_InstallEnd(info, input_zip)
 
 def IncrementalOTA_InstallEnd(info):
-  OTA_InstallEnd(info)
+  input_zip = info.target_zip
+  OTA_InstallEnd(info, input_zip)
 
-def AddImage(info, basename, dest):
+def AddImage(info, input_zip, basename, dest):
   path = "IMAGES/" + basename
-  if path not in info.input_zip.namelist():
+  if path not in input_zip.namelist():
     return
 
-  data = info.input_zip.read(path)
+  data = input_zip.read(path)
   common.ZipWriteStr(info.output_zip, basename, data)
   info.script.AppendExtra('package_extract_file("%s", "%s");' % (basename, dest))
 
-def OTA_InstallEnd(info):
+def OTA_InstallEnd(info, input_zip):
   PatchVendor(info)
   info.script.Print("Patching vbmeta image...")
-  AddImage(info, "vbmeta.img", "/dev/block/bootdevice/by-name/vbmeta")
+  AddImage(info, input_zip, "vbmeta.img", "/dev/block/bootdevice/by-name/vbmeta")
 
   info.script.Print("Flashing scp firmware...")
-  AddImage(info, "scp.img", "/dev/block/bootdevice/by-name/scp1")
-  AddImage(info, "scp.img", "/dev/block/bootdevice/by-name/scp2")
+  AddImage(info, input_zip, "scp.img", "/dev/block/bootdevice/by-name/scp1")
+  AddImage(info, input_zip, "scp.img", "/dev/block/bootdevice/by-name/scp2")
 
 def PatchVendor(info):
   info.script.Print("Patching vendor init scripts & libs...")
