@@ -39,7 +39,6 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 
 PRODUCT_PRODUCT_PROPERTIES += \
     debug.sf.latch_unsignaled=1 \
-    debug.sf.enable_gl_backpressure=1 \
     debug.sf.early_phase_offset_ns=500000 \
     debug.sf.early_app_phase_offset_ns=500000 \
     debug.sf.early_gl_phase_offset_ns=3000000 \
