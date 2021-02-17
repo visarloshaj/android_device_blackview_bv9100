@@ -66,6 +66,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
+# Touch HAL
+PRODUCT_PACKAGES += \
+    lineage.touch@1.0-service.bv9100
+
 # Trust HAL
 PRODUCT_PACKAGES += \
     lineage.trust@1.0-service

@@ -1,0 +1,37 @@
+on boot
+    chmod 0660 /sys/devices/platform/11007000.i2c0/i2c-0/0-005d/double_tap_switch
+    chmod 0660 /sys/devices/platform/11007000.i2c0/i2c-0/0-005d/swipe_right_switch
+    chmod 0660 /sys/devices/platform/11007000.i2c0/i2c-0/0-005d/swipe_left_switch
+    chmod 0660 /sys/devices/platform/11007000.i2c0/i2c-0/0-005d/swipe_up_switch
+    chmod 0660 /sys/devices/platform/11007000.i2c0/i2c-0/0-005d/swipe_down_switch
+    chmod 0660 /sys/devices/platform/11007000.i2c0/i2c-0/0-005d/letter_o_switch
+    chmod 0660 /sys/devices/platform/11007000.i2c0/i2c-0/0-005d/letter_e_switch
+    chmod 0660 /sys/devices/platform/11007000.i2c0/i2c-0/0-005d/letter_m_switch
+    chmod 0660 /sys/devices/platform/11007000.i2c0/i2c-0/0-005d/letter_w_switch
+    chmod 0660 /sys/devices/platform/11007000.i2c0/i2c-0/0-005d/letter_l_switch
+    chmod 0660 /sys/devices/platform/11007000.i2c0/i2c-0/0-005d/letter_s_switch
+    chmod 0660 /sys/devices/platform/11007000.i2c0/i2c-0/0-005d/letter_v_switch
+    chmod 0660 /sys/devices/platform/11007000.i2c0/i2c-0/0-005d/letter_c_switch
+    chmod 0660 /sys/devices/platform/11007000.i2c0/i2c-0/0-005d/letter_z_switch
+    chmod 0660 /sys/devices/platform/11007000.i2c0/i2c-0/0-005d/fts_glove_mode
+
+    chown system system /sys/devices/platform/11007000.i2c0/i2c-0/0-005d/double_tap_switch
+    chown system system /sys/devices/platform/11007000.i2c0/i2c-0/0-005d/swipe_right_switch
+    chown system system /sys/devices/platform/11007000.i2c0/i2c-0/0-005d/swipe_left_switch
+    chown system system /sys/devices/platform/11007000.i2c0/i2c-0/0-005d/swipe_up_switch
+    chown system system /sys/devices/platform/11007000.i2c0/i2c-0/0-005d/swipe_down_switch
+    chown system system /sys/devices/platform/11007000.i2c0/i2c-0/0-005d/letter_o_switch
+    chown system system /sys/devices/platform/11007000.i2c0/i2c-0/0-005d/letter_e_switch
+    chown system system /sys/devices/platform/11007000.i2c0/i2c-0/0-005d/letter_m_switch
+    chown system system /sys/devices/platform/11007000.i2c0/i2c-0/0-005d/letter_w_switch
+    chown system system /sys/devices/platform/11007000.i2c0/i2c-0/0-005d/letter_l_switch
+    chown system system /sys/devices/platform/11007000.i2c0/i2c-0/0-005d/letter_s_switch
+    chown system system /sys/devices/platform/11007000.i2c0/i2c-0/0-005d/letter_v_switch
+    chown system system /sys/devices/platform/11007000.i2c0/i2c-0/0-005d/letter_c_switch
+    chown system system /sys/devices/platform/11007000.i2c0/i2c-0/0-005d/letter_z_switch
+    chown system system /sys/devices/platform/11007000.i2c0/i2c-0/0-005d/fts_glove_mode
+
+service touch-hal-1-0 /system/bin/hw/lineage.touch@1.0-service.bv9100
+    class hal
+    user system
+    group system
