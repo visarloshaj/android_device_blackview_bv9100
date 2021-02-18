@@ -36,7 +36,7 @@ def OTA_InstallEnd(info):
   AddImage(info, "vbmeta.img", "/dev/block/bootdevice/by-name/vbmeta")
 
   info.script.Print("Flashing scp firmware...")
-  AddImage(info, "scp.img", "/dev/block/bootdevice/by-name/scp1")
+  AddImage(info, "RADIO/scp.img", "/dev/block/bootdevice/by-name/scp1")
   info.script.AppendExtra(
       'package_extract_file("scp.img", "/dev/block/bootdevice/by-name/scp2");')
 
