@@ -18,6 +18,9 @@ BUILD_BROKEN_DUP_RULES := true
 
 DEVICE_PATH := device/blackview/bv9100
 
+# Use prebuilt kernel - temporary
+TARGET_USES_PREBUILT_KERNEL := true
+
 # Platform
 TARGET_BOARD_PLATFORM := mt6765
 TARGET_NO_BOOTLOADER := true
@@ -61,10 +64,6 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 
-# Prebuilts
-BOARD_PREBUILT_IMAGES := scp
-BOARD_PREBUILT_IMAGES_PATH := $(DEVICE_PATH)/prebuilts
-
 # Boot
 BOARD_KERNEL_BASE := 0x40078000
 BOARD_KERNEL_PAGESIZE := 2048
@@ -82,6 +81,9 @@ BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 # Kernel
+ifeq ($(TARGET_USES_PREBUILT_KERNEL),true)
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilts/Image.gz-dtb
+else
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_SOURCE := kernel/blackview/mt6765
@@ -90,6 +92,11 @@ NEED_KERNEL_MODULE_SYSTEM := true
 TARGET_KERNEL_ADDITIONAL_FLAGS := \
     DTC=$(shell pwd)/prebuilts/misc/$(HOST_OS)-x86/dtc/dtc \
     MKDTIMG=$(shell pwd)/prebuilts/misc/$(HOST_OS)-x86/libufdt/mkdtimg
+
+# SCP Firmware
+BOARD_PREBUILT_IMAGES := scp
+BOARD_PREBUILT_IMAGES_PATH := $(DEVICE_PATH)/prebuilts
+endif
 
 # Recovery
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
