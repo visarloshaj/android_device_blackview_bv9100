@@ -36,6 +36,9 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
     $(LOCAL_PATH)/overlay-lineage
 
+PRODUCT_PACKAGES += \
+    TetheringConfigOverlay
+
 # Camera
 PRODUCT_PACKAGES += \
     Snap
@@ -45,7 +48,7 @@ PRODUCT_PACKAGES += \
     libhidltransport \
     libhidltransport.vendor \
     libhwbinder \
-    libhwbinder.vendor 
+    libhwbinder.vendor
 
 # Init
 PRODUCT_PACKAGES += \
