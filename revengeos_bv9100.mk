@@ -20,14 +20,19 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 
 # Inherit some common Lineage stuff
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/revengeos/config/common.mk)
 
+# Inherit from Blackview BV9100 device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
+# Boot Animation RES
+TARGET_BOOT_ANIMATION_RES := 1080
+
+# Device identifier. This must come after all inclusions.
 PRODUCT_BRAND := Blackview
 PRODUCT_DEVICE := bv9100
 PRODUCT_MANUFACTURER := Blackview
-PRODUCT_NAME := lineage_bv9100
+PRODUCT_NAME := revengeos_bv9100
 PRODUCT_MODEL := Blackview BV9100
 
 # Override PRODUCT_DEVICE to keep TrustKernel happy.
