@@ -37,9 +37,9 @@ def OTA_InstallEnd(info, input_zip):
   info.script.Print("Patching vbmeta image...")
   AddImage(info, input_zip, "vbmeta.img", "/dev/block/bootdevice/by-name/vbmeta")
 
-  info.script.Print("Flashing scp firmware...")
-  AddImage(info, input_zip, "scp.img", "/dev/block/bootdevice/by-name/scp1")
-  AddImage(info, input_zip, "scp.img", "/dev/block/bootdevice/by-name/scp2")
+  #info.script.Print("Flashing scp firmware...")
+  #AddImage(info, input_zip, "scp.img", "/dev/block/bootdevice/by-name/scp1")
+  #AddImage(info, input_zip, "scp.img", "/dev/block/bootdevice/by-name/scp2")
 
 def PatchVendor(info):
   info.script.Print("Patching vendor init scripts & libs...")
