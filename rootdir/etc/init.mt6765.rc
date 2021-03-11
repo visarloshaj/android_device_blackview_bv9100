@@ -1,7 +1,4 @@
 on init
-    # Disable vendor overlay
-    mount none /vendor/lost+found /vendor/overlay bind
-
     # Force disable all VoLTE support -- it requires intensive modification of frameworks
     # without framework support it creates all sorts of problems. Disable it.
     setprop persist.vendor.mtk.volte.enable 0
