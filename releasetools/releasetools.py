@@ -33,18 +33,9 @@ def AddImage(info, input_zip, basename, dest):
   info.script.AppendExtra('package_extract_file("%s", "%s");' % (basename, dest))
 
 def OTA_InstallEnd(info, input_zip):
-  PatchVendor(info)
   info.script.Print("Patching vbmeta image...")
   AddImage(info, input_zip, "vbmeta.img", "/dev/block/bootdevice/by-name/vbmeta")
 
   #info.script.Print("Flashing scp firmware...")
   #AddImage(info, input_zip, "scp.img", "/dev/block/bootdevice/by-name/scp1")
   #AddImage(info, input_zip, "scp.img", "/dev/block/bootdevice/by-name/scp2")
-
-def PatchVendor(info):
-  info.script.Print("Patching vendor init scripts...")
-  info.script.AppendExtra('mount("ext4", "EMMC", "/dev/block/platform/bootdevice/by-name/vendor", "/vendor");')
-  info.script.AppendExtra('run_program("/sbin/sed", "-i", "s/formattable,resize,forcefdeorfbe/formattable,latemount,forcefdeorfbe/", "/vendor/etc/fstab.mt6765");')
-  info.script.AppendExtra('run_program("/sbin/sed", "-i", "s/fstab.mt6765$/fstab.mt6765 --early\\n    mount_all \/vendor\/etc\/fstab.mt6765 --late/", "/vendor/etc/init/hw/init.mt6765.rc");')
-  info.script.AppendExtra('unmount("/vendor");')
-
