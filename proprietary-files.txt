@@ -1,0 +1,2 @@
+# RIL
+vendor/lib64/libmtk-ril.so:product/vendor_overlay/28/lib64/libmtk-ril.so
