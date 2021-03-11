@@ -61,6 +61,7 @@ PRODUCT_PACKAGES += \
 # Init
 PRODUCT_PACKAGES += \
     fstab.enableswap \
+    fstab.mt6765 \
     init.mt6765.rc
 
 # Keylayout
