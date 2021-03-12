@@ -52,6 +52,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Snap
 
+# RIL
+# Use patched libmtk-ril library from system
+PRODUCT_PROPERTY_PROPERTIES += rild.libpath=/system/lib64/libmtk-ril.so
+
 # HIDL
 PRODUCT_PACKAGES += \
     libhidltransport \
