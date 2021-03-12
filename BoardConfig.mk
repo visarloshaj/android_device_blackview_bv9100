@@ -21,9 +21,6 @@ BUILD_BROKEN_VINTF_PRODUCT_COPY_FILES := true
 
 DEVICE_PATH := device/blackview/bv9100
 
-# Use prebuilt kernel - temporary
-TARGET_USES_PREBUILT_KERNEL := true
-
 # Platform
 TARGET_BOARD_PLATFORM := mt6765
 TARGET_BOOTLOADER_BOARD_NAME := k65v1_64_bsp
@@ -96,22 +93,9 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 BOARD_MKBOOTIMG_ARGS += --board ""
 
 # Kernel
-ifeq ($(TARGET_USES_PREBUILT_KERNEL),true)
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilts/Image.gz-dtb
-else
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_SOURCE := kernel/blackview/mt6765
-TARGET_KERNEL_CONFIG := bv9100_defconfig
-NEED_KERNEL_MODULE_SYSTEM := true
-TARGET_KERNEL_ADDITIONAL_FLAGS := \
-    DTC=$(shell pwd)/prebuilts/misc/$(HOST_OS)-x86/dtc/dtc \
-    MKDTIMG=$(shell pwd)/prebuilts/misc/$(HOST_OS)-x86/libufdt/mkdtimg
-
-# SCP Firmware
-BOARD_PREBUILT_IMAGES := scp
-BOARD_PREBUILT_IMAGES_PATH := $(DEVICE_PATH)/prebuilts
-endif
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilts/Image.gz-dtb
 
 # Recovery
 TARGET_RECOVERY_PIXEL_FORMAT := "BGRA_8888"
