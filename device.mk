@@ -18,6 +18,7 @@ $(call inherit-product-if-exists, vendor/blackview/bv9100/bv9100-vendor.mk)
 
 # Properties
 -include $(LOCAL_PATH)/product_prop.mk
+-include $(LOCAL_PATH)/logging.mk
 
 # Permissions
 PRODUCT_COPY_FILES += \
